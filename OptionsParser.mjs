@@ -120,7 +120,7 @@ export default class OptionsParser {
      */
     _read_environment() {
         // TODO: Those keys are not flattened?
-        for (const flattened_key of Object.keys(this._config)) {
+        for (const flattened_key of Object.keys(this.flattened_config)) {
             const value = process.env[`${this.env_prefix}_${flattened_key.replace(/\./g, '_').toUpperCase()}`];
             if (value === undefined)
                 continue;
