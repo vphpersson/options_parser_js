@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "argparse": "^1.0.10",
-    "node-yaml": "^3.1.1",
-    "vph_js_utils": "file:../../lib/js_utils"
+    "js_utils": "file:../js_utils",
+    "node-yaml": "^3.1.1"
   }
 }
