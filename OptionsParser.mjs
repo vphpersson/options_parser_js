@@ -1,7 +1,7 @@
 import argparse from 'argparse';
 import yaml from 'node-yaml';
 
-import {flatten} from 'vph_js_utils/vph-utils.mjs'
+import {flatten} from 'js_utils/vph-utils.mjs'
 
 export default class OptionsParser {
 
