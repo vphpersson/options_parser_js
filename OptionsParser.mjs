@@ -1,7 +1,7 @@
 import argparse from 'argparse';
 import yaml from 'node-yaml';
 
-import {flatten} from 'js_utils/vph-utils.mjs'
+import {flatten_object} from 'jsutils/conversion';
 
 export default class OptionsParser {
 
@@ -29,7 +29,7 @@ export default class OptionsParser {
     get flattened_config() {
         return this._flattened_config !== undefined
             ? this._flattened_config
-            : (this._flattened_config = flatten(this._config))
+            : (this._flattened_config = flatten_object(this._config))
         ;
     }
 
@@ -43,7 +43,7 @@ export default class OptionsParser {
      * @private
      */
     _init_argparser() {
-        const flattened_config_help = flatten(this.config_help);
+        const flattened_config_help = flatten_object(this.config_help);
         const parser = new argparse.ArgumentParser();
 
         for (const key of Object.keys(this.flattened_config)) {
@@ -99,7 +99,7 @@ export default class OptionsParser {
             if (file_config === undefined)
                 return;
 
-            for (const [flattened_key, value] of Object.entries(flatten(file_config))) {
+            for (const [flattened_key, value] of Object.entries(flatten_object(file_config))) {
                 if (value === '')
                     continue;
 
