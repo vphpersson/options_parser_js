@@ -1,7 +1,7 @@
 import argparse from 'argparse';
 import yaml from 'node-yaml';
 
-import {flatten_object} from 'jsutils/conversion';
+import {flatten_object} from 'jsutils/conversion.mjs';
 
 export default class OptionsParser {
 
